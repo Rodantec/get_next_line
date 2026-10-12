@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rodantec <rodantec@student.s19.be>         +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 12:41:27 by rodantec          #+#    #+#             */
-/*   Updated: 2024/11/21 14:52:08 by rodantec         ###   ########.fr       */
+/*   Updated: 2026/10/12 11:46:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,54 +118,4 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int main(void)
-{
-	char *line;
 
-	
-    int fd = open("test.txt", O_RDONLY);
-    if (fd == -1)
-    {
-        perror("Failed to open file");
-        return (1);
-    }
-
-	line = get_next_line(fd);
-	while (line)
-	{
-		printf("%s", line);
-		free(line);
-		line = get_next_line(fd);
-	}
-	
-    // char *line = get_next_line(fd);
-    //  char *line2 = get_next_line(fd);
-    //   char *line3 = get_next_line(fd);
-    //   char *line4 = get_next_line(fd);
-    // char *line5 = get_next_line(fd);
-    //  char *line6 = get_next_line(fd);
-    // //  char *line7 = get_next_line(fd);
-    // //   char *line8 = get_next_line(fd);
-    // //    char *line9 = get_next_line(fd);
-    // //     char *line10 = get_next_line(fd);
-    //     printf( "%s", line);
-    //     printf("%s", line2);
-    //      printf("%s", line3);
-    //     printf("%s", line4);
-    //     printf(  "%s", line5);
-    //      printf("%s", line6);
-    //      free(line);
-    //      free(line2);
-    //      free(line3);
-    //      free(line4);
-    //      free(line5);
-    //      free(line6);
-        // printf("%s", line7);
-        // printf("%s", line8);
-        // printf("%s", line9);
-        // printf("%s", line10);
-
-         // N'oubliez pas de libérer la mémoire allouée pour la ligne
-    close(fd);
-    return (0);
-}
